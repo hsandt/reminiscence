@@ -6,6 +6,7 @@ def str_to_cmd(str)
 end
 
 def prompt
+  print "> "
   input = gets.chomp
   str_to_cmd input
 end

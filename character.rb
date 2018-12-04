@@ -1,3 +1,5 @@
+require_relative 'output'
+
 class Character
   
  attr_reader :name
@@ -7,7 +9,8 @@ class Character
   end
 
   def say(text)
-    puts "#{name}: #{text}"
+    print "#{name}: "
+    print_split text
   end
 end
 
