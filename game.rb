@@ -45,7 +45,7 @@ class Game
     end
   end
 
-  def outro
+  def self.outro
     puts "-- END --"
   end
 

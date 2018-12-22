@@ -9,8 +9,8 @@ class Character
   end
 
   def say(text)
-    print "#{name}: "
-    print_split text
+    Output.print_now "#{name}: "
+    Output.print_split text
   end
 end
 
