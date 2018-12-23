@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require_relative 'character'
 require_relative 'input'
 require_relative 'output'
