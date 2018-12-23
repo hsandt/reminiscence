@@ -71,11 +71,10 @@ def wrap_lines_after(text, max_line_length, initial_current_line_length)
   lines = []
   # split text into an alternance of words and
   # whitespaces
-  parts = text.split(/(\W+)/)
+  parts = text.split(/(\s+)/)
   current_line = ""
   current_line_length = initial_current_line_length
   parts.each do |part|
-    #puts("debug part '#{part}' for line length #{current_line_length}")
     if part.strip.empty? then
       # this part is one or more whitespaces
       if current_line_length + part.length <= max_line_length then      
@@ -110,7 +109,6 @@ def wrap_lines_after(text, max_line_length, initial_current_line_length)
         end
       end
     end
-    #puts("debug line length after part '#{part}': #{current_line_length}")
   end
   # if current line is not empty, add it as the last one
   unless current_line.empty?
