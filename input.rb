@@ -5,9 +5,16 @@ def str_to_cmd(str)
   nil
 end
 
+# prompt for command and return it
 def prompt
   print "> "
   input = gets.chomp
   str_to_cmd input
 end
 
+# prompt for integer and return it
+def prompt_i
+  print "> "
+  input = gets.chomp
+  input.to_i
+end

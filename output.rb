@@ -7,7 +7,7 @@ WRAP_LINE_LENGTH = 51
 
 # narrate text with breaks on |
 def tell(text)
-  Output.print_split text
+  Output.puts_split text
 end
 
 module Output
@@ -26,7 +26,7 @@ module Output
 
   # print text, segment by segment, separated by |,
   # and wait for reading time after each
-  def self.print_split(text)
+  def self.puts_split(text)
     sentences = text.split '|'
     sentences.each do |s|
       print_for_reading s
