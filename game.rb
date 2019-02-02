@@ -11,7 +11,13 @@ class Game
   @mc = Character.new 'You'
   @pa = Character.new 'Parakeet'
 
+  def self.create_singleton_instances
+    Input.create_instance
+    ShardManager.create_instance
+  end
+
   def self.main
+    create_singleton_instances()
     load_data()
 
     # debug
@@ -33,7 +39,7 @@ class Game
     sleep 1
     @pa.say "So, you wonder what you are here for, don't you? *gurgle*"
     @pa.say "Well, do you see those mirror shards?"
-    prompt
+    prompt_i
     @mc.say "..."
     sleep 2
     @pa.say "*squawk* |Of course, you cannot speak! | Not like me."
@@ -48,7 +54,7 @@ class Game
     sleep 2
     loop do
       @pa.say "Are you lost?"
-      result = prompt
+      result = prompt_cmd
       if result == :nod then
         break
       end
@@ -57,7 +63,7 @@ class Game
     @pa.say "Perfect.| Now you can share your despair with everyone else."
     @pa.say "All right, time to go now.| Have a look into one of the mirror shards.| You'll guess what to do from then on. Is it all clear?"
     
-    result = prompt
+    result = prompt_cmd
     if result == :nod then
       @pa.say "Of course it is. I have a teaching license in communication."
     else
@@ -79,5 +85,4 @@ class Game
 
 end
 
-ShardManager.create_instance
 Game.main
