@@ -4,6 +4,7 @@ require_relative 'character'
 require_relative 'hub'
 require_relative 'input'
 require_relative 'output'
+require_relative 'settings'
 require_relative 'shards'
 require_relative 'data/load_data'
 
@@ -11,13 +12,16 @@ class Game
   @mc = Character.new 'You'
   @pa = Character.new 'Parakeet'
 
-  def self.create_singleton_instances
+  def self.initialize_singletons
     Input.create_instance
+    Settings.create_instance
+    Settings.get.reading_time_factor = 0.05
+    Settings.get.wrap_line_length = 50
     ShardManager.create_instance
   end
 
   def self.main
-    create_singleton_instances()
+    initialize_singletons()
     load_data()
 
     # debug

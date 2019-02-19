@@ -17,6 +17,9 @@ require_relative 'data/load_data'
 
 Input.create_instance
 ShardManager.create_instance
+Settings.create_instance
+Settings.get.reading_time_factor = 0.01
+Settings.get.wrap_line_length = 50
 
 load_data()
 

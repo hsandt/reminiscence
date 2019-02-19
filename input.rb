@@ -16,6 +16,7 @@ class Input
     @@instance
   end
 
+  private
   # use stdin by default for game
   # but allow custom input stream for testing
   # https://stackoverflow.com/questions/12478133/write-test-for-accepting-input-from-command-line
@@ -30,6 +31,7 @@ class Input
     nil
   end
 
+  public
   # prompt for command and return it
   def prompt_cmd
     print "> "

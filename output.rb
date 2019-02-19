@@ -1,9 +1,4 @@
-# estimated reading time per text length unit
-# (in s/char)
-READING_TIME_FACTOR = 0.05
-
-# default wrap line max length
-WRAP_LINE_LENGTH = 51
+require_relative "settings"
 
 # narrate text with breaks on |
 def tell(text)
@@ -38,7 +33,8 @@ module Output
 
   # print text and wait for reading time
   def self.print_for_reading(text)
-    print_wrapped_lines(text, WRAP_LINE_LENGTH)
+    fail "Settings singleton instance not created" if Settings.get.nil?
+    print_wrapped_lines(text, Settings.get.wrap_line_length)
     sleep(compute_reading_time(text.length))
   end
   
@@ -54,7 +50,8 @@ end
 
 # return estimated reading time in s
 def compute_reading_time(text_length)
-  text_length * READING_TIME_FACTOR  
+    fail "Settings singleton instance not created" if Settings.get.nil?
+  text_length * Settings.get.reading_time_factor  
 end
 
 # return a tuple of:
