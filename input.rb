@@ -40,12 +40,23 @@ class Input
   end
 
   # prompt for integer and return it
-  def prompt_i
-    print "> "
-    input_str = @input.gets.chomp
-    input_str.to_i
+  def prompt_i(lower, upper)
+    loop do
+      print "[Enter an integer in the range #{lower}-#{upper}]"
+      print "> "
+      input_str = @input.gets
+      if input_str.nil?
+        raise "No input left (must be automated input)"
+      end
+      input_str = input_str.chomp
+      input_int = input_str.to_i
+      if input_int.between?(lower, upper)
+        return input_int
+      else
+        print "[Invalid integer]"
+      end
+    end
   end
-
 end
 
 # shortcut functions
@@ -55,8 +66,8 @@ def prompt_cmd
   Input.get.prompt_cmd
 end
 
-def prompt_i
+def prompt_i(lower, upper)
   fail "Input singleton instance not created" if Input.get.nil? 
-  Input.get.prompt_i
+  Input.get.prompt_i(lower, upper)
 end
 

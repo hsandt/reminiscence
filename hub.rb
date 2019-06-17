@@ -23,8 +23,8 @@ module Hub
     end
     shard_natural_index = nil
     loop do
-      tell "Which one do you look into? (#{1}-#{remaining_shards.length})"
-      shard_natural_index = prompt_i
+      tell "Which one do you look into?"
+      shard_natural_index = prompt_i(1, remaining_shards.length)
       if shard_natural_index >= 1 and shard_natural_index <= remaining_shards.length then
         break
       end
