@@ -43,7 +43,7 @@ class Game
     sleep 1
     @pa.say "So, you wonder what you are here for, don't you? *gurgle*"
     @pa.say "Well, do you see those mirror shards?"
-    prompt_i
+    prompt_cmd
     @mc.say "..."
     sleep 2
     @pa.say "*squawk* |Of course, you cannot speak! | Not like me."
