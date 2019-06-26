@@ -9,6 +9,8 @@ require_relative 'shards'
 require_relative 'data/load_data'
 
 class Game
+  VERSION = 0.1  
+
   @mc = Character.new 'You'
   @pa = Character.new 'Parakeet'
 
@@ -32,6 +34,9 @@ class Game
   end
 
   def self.intro
+    tell "= Reminiscence ="
+    tell "v#{VERSION}                "
+    tell ""
     tell "You open your eyes and find yourself in a broad room."
     tell "Behind you, a bay window lets the dawn - or dusk? - shine through, tainting the room in orange."
     tell "The room has no doors. In the middle stands a small withered potted shrub, surrounded by mirror shards spread on the floor."
