@@ -1,7 +1,18 @@
 require_relative "output"
+require_relative "settings"
 require "test/unit"
 
 class TestOutput < Test::Unit::TestCase
+
+  def setup
+    Settings.create_instance
+    Settings.get.reading_time_factor = 0.05
+    Settings.get.wrap_line_length = 50
+  end
+
+  def teardown
+    Settings.clear_instance
+  end
 
   def test_compute_reading_time
     assert_equal(1, compute_reading_time(20))
