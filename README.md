@@ -6,7 +6,9 @@ The game was entirely coded in Ruby on an Android smartphone, using [Termux](htt
 
 # How to play
 
-To run the game, open a terminal and enter:
+## With Ruby
+
+If you have ruby already installed, open a terminal and enter:
 
 `ruby game.rb`
 
@@ -14,11 +16,24 @@ or just:
 
 `./game.rb`
 
+## Without Ruby
+
+We recommend to download the latest [release](https://github.com/hsandt/reminiscence/releases). This is a standalone executable compiled with [ruby-packer](https://github.com/pmq20/ruby-packer) that can be run directly without Ruby. Download the release matching your PC OS and run it. (TODO: support Windows)
+
+You can also build the game yourself by using the script:
+
+`./dist.sh`
+
+This will produce an executable `reminiscence` in the `dist` folder.
+
+## Notes
+
 The text output is formatted for a narrow terminal with a width of 51 characters.
 
 ## Tested platforms
 
 * Android with Termux
+* Linux Ubuntu
 
 # Unit tests
 
