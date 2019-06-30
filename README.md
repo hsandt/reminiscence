@@ -18,7 +18,7 @@ or just:
 
 ## Without Ruby
 
-We recommend to download the latest [release](https://github.com/hsandt/reminiscence/releases). This is a standalone executable compiled with [ruby-packer](https://github.com/pmq20/ruby-packer) that can be run directly without Ruby. Download the release matching your PC OS and run it. (TODO: support Windows)
+We recommend to download the latest [release](https://github.com/hsandt/reminiscence/releases). This is a standalone executable compiled with [ruby-packer](https://github.com/pmq20/ruby-packer) that can be run directly without Ruby. Download the release matching your PC OS, and run it. On Unix, you may need to apply `chmod +x reminiscence` to make it executable. (TODO: support Windows)
 
 You can also build the game yourself by using the script:
 
