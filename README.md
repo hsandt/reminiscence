@@ -32,8 +32,8 @@ The text output is formatted for a narrow terminal with a width of 51 characters
 
 ## Tested platforms
 
-* Android with Termux
-* Linux Ubuntu
+* Android with Termux (play with Ruby only)
+* Linux Ubuntu (play with Ruby and `dist.sh`)
 
 # Unit tests
 

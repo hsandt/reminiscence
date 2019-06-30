@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Build game in dist/reminiscence for Linux
+# Build game in dist/reminiscence for Linux (tested on Ubuntu only)
 
 # Dependency; ruby-packer (https://github.com/pmq20/ruby-packer) with `rubyc` in PATH
 
