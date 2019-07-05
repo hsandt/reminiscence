@@ -26,17 +26,46 @@ class Game
     initialize_singletons()
     load_data()
 
-    # debug
-#    display_remaining_shards_until_empty
+    start
+  end
 
-    intro
+  def self.start
+    info
+
+    tell "[Show game explanations?]"
+    show_explanations = prompt_b
+    tell ""
+    if show_explanations then
+      explanations
+    end
+
+    tell "[Show introduction?]"
+    show_intro = prompt_b
+    tell ""
+    if show_intro then
+      intro
+    end
+
+    hub
+
     outro
   end
 
-  def self.intro
+  def self.info
     tell "= Reminiscence ="
     tell "v#{VERSION}                "
     tell ""
+  end
+
+  def self.explanations
+    tell "[This game is a simplified text adventure where you only need to type single words.]"
+    tell "[System messages will appear between brackets '[]', while game text will appear normally.]"
+    tell "[When you are prompted for input, the next line will start with '>'. You must then enter an appropriate command or answer and press Enter.]"
+    tell "[You will learn commands as the game progresses.]"
+    tell ""
+  end
+
+  def self.intro
     tell "You open your eyes and find yourself in a broad room."
     tell "Behind you, a bay window lets the dawn - or dusk? - shine through, tainting the room in orange."
     tell "The room has no doors. In the middle stands a small withered potted shrub, surrounded by mirror shards spread on the floor."
@@ -78,7 +107,9 @@ class Game
     else
       @pa.say "Hm, it looks like you cannot convey all your thoughts. Don't worry, that will come in time."
     end
-    
+end
+
+  def self.hub
     @pa.say "So, which shard will you look into?"
     
     tell "You look at the pieces of glass and realize that a few of them do not reflect the room, showing a deep scenery instead."

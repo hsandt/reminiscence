@@ -12,6 +12,10 @@ class TestInput < Test::Unit::TestCase
     Input.clear_instance
   end
 
+  def test_str_to_bool_true
+    assert_equal(true, Input.str_to_bool("true"))
+  end
+
   def test_prompt_i_integer
     @input.puts "5"
     @input.rewind
