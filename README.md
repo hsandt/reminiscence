@@ -42,6 +42,8 @@ Note that Ruby Ship packs a complete distribution of Ruby, which gives a very bi
 
 There is no script to make a distribution for Windows only (which would be smaller in size), although I manually made a Windows-only distribution by simply copying only cross-platform and Windows-specific folders from Ruby Ship (used by `dist_all.sh`), so I could make a smaller ZIP archive. It is available in the [Release](https://github.com/hsandt/reminiscence/releases) section on the GitHub repository.
 
+I did a similar thing for OSX, but couldn't test it due to the lack of adequate hardware. I could not compile with Ruby Packer (`rubyc`) either for the same reason; it would have created a much smaller build. On UNIX platforms, you will easily get Ruby installed anyway.
+
 ## Notes
 
 The text output is formatted for a narrow terminal with a width of 51 characters.
