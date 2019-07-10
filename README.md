@@ -23,12 +23,20 @@ or just:
 
 We recommend to download the latest [release](https://github.com/hsandt/reminiscence/releases). This is a standalone executable compiled with [ruby-packer](https://github.com/pmq20/ruby-packer) that can be run directly without Ruby. Download the release matching your PC OS, and run it. On Unix, you may need to apply `chmod +x reminiscence` to make it executable.
 
-You can also build the game yourself by using the script:
+You can also build the game yourself by installing Ruby Packer (UNIX only) or downloading Ruby Ship, and using the scripts:
 
-`./dist_ruby_packer.sh` (UNIX only)
-`./dist_all.sh` (all PC platforms)
+`./dist_ruby_packer.sh` (UNIX only, requires Ruby Packer as `rubyc` in the `PATH`)
+`./dist_all.sh [ruby_ship]` (all PC platforms, pass path to Ruby Ship root the first time)
 
 This will produce an executable `reminiscence` in the `dist` folder, in either `all` or `unix`.
+
+dist_all.sh may fail if the path to where you downloaded the repository contains a space. A [known bug](https://github.com/stephan-nordnes-eriksen/ruby_ship/issues/20), the local fix is to edit, in your local Ruby Ship install:
+
+- `ruby_ship/bin/ruby_ship.bat`
+- `ruby_ship/bin/shipyard/linux_ruby.sh`
+- `ruby_ship/bin/shipyard/win_ruby.bat`
+
+to surround all paths with double quotes.
 
 Note that Ruby Ship packs a complete distribution of Ruby, which gives a very big standalone executable (110MB for Linux and OSX each, 40MB for Windows). Therefore, we recommend to play the game with Ruby installed, but we offer the standalone distribution for users who wouldn't have it.
 
