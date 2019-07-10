@@ -4,6 +4,9 @@ A text adventure to play in the terminal based on communication via gestures.
 
 The game was entirely coded in Ruby on an Android smartphone, using [Termux](https://termux.com) with the ruby package, [CodeBoard Keyboard for Coding by GazLaws](https://play.google.com/store/apps/details?id=com.gazlaws.codeboard) and Vim.
 
+![Reminiscence v0.1b played in Windows terminal - Run](https://github.com/hsandt/reminiscence/blob/develop/screenshots/v0.1b%20Windows%20-%20Run.png)
+![Reminiscence v0.1b played in Windows terminal - Tutorial](https://github.com/hsandt/reminiscence/blob/develop/screenshots/v0.1b%20Windows%20-%20Tutorial.png)
+
 # How to play
 
 ## With Ruby
